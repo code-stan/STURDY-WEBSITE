@@ -1,0 +1,74 @@
+.homepage{
+    margin-top: 25vh;
+
+    @include media-lg{
+        margin-top: 20vh;
+    }
+    .center-video{
+        @include flex(center, center);
+        padding-inline: 1rem;
+        video{
+            max-width: 65rem;
+            max-height: 65rem;
+        }
+    }
+
+    &__contents{
+        margin-top: 10vh;
+        h1{
+            user-select: none;
+            font-family: $ff-large;
+            font-weight: 900;
+            font-size: 17.5vw;
+            text-align: center;
+            letter-spacing: -.19rem;
+        }
+        .footerish__contents{
+            padding-bottom: 1.2rem;
+            word-spacing: clamp(0rem, 3vw, .3rem);
+        }
+        .info__contact > *,
+        .current__date > *{
+            font-size: clamp($fs-300, 3vw, $fs-500);
+        }
+        .extras{
+            @include flex(end, space-between);
+            gap: 3rem;
+            padding-top: .25rem;
+        }
+        .social-link{
+            transition: .4s $timing-function;
+        }
+        .current__date{
+            @include flex(center, center);
+            gap: clamp(.8rem, 3vw,1.3rem);
+        }
+
+        time{
+            display: block;
+        }
+    }
+}
+
+// ASIDE CONTAINER
+.cv-contents{
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+}
+.follow-through{
+    --x: 0;
+    --y: 0;
+    opacity: 0;
+    font-weight: 800;
+    font-size: $fs-600;
+    color: $Gray;
+    mix-blend-mode: difference;
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-var(--x), -var(--y));
+    pointer-events: none;
+    user-select: none;
+    width: max-content;
+}

@@ -1,0 +1,54 @@
+.watchpage{
+    padding-block: $head-spacing 4rem;
+    color: $Light-Gray;
+    font-size: $clamp-var-fs;
+    font-weight: 600;
+    opacity: 0;
+}
+.artist-tab{
+    @include flex(center, left);
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: .75rem; padding-left: 1rem;
+    cursor: pointer;
+    transition: .4s $timing-function;
+    width: max-content;
+    position: relative;
+    overflow-y: hidden;
+
+    &:is(:hover, :focus){
+        color: $Black;
+    }
+    .artist__name{
+        opacity: 0;
+        transform: translateY(400px);
+    }
+
+    &:is(:hover, :focus) :is(.img, .image-tab){
+        opacity: 1;
+    }
+}
+%image-prop{
+    transition: .4s $timing-function;
+    max-width: 9rem;
+    max-height: 5rem;
+}
+.image-tab{
+    overflow: hidden;
+    opacity: 0;
+    @extend %image-prop;
+    
+    img{
+        min-width: 8rem;
+        @extend %image-prop;
+        object-fit: cover;
+
+    }
+    :is(&, img):hover{
+        max-width: 30rem;
+        max-height: 20rem;
+        transition: .4s $timing-function;
+        z-index: $z-2;
+    }
+
+}

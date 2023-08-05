@@ -1,0 +1,58 @@
+.infopage{
+    opacity: 0;
+    margin-top: 25vh;
+    word-spacing: clamp(0rem, 3vw, .2rem);
+    
+    .info-page{
+        @include flex(center, center);
+        flex-direction: column;
+        padding-inline: clamp(2.5rem, 8vw, 7rem);
+        p{
+            text-align: justify;
+            max-width: 75rem;
+            font-size: clamp($fs-600, 3vw, $fs-800);
+        }
+
+    }
+    .contact-section{
+        color: $Light-Gray;
+        margin-top: 15vh;
+        background-color: $Black;
+        min-height: 40vh;
+        text-align: center;
+        padding-block: 5rem;
+
+        .reach-out{
+            font-family: $ff-large;
+            font-weight: 800;
+            font-size: 9vw;
+        }
+    }
+}
+.social-links{
+    @include flex(center, center);
+    gap: 3vw;
+    margin-top: 5rem;
+    
+    a{
+        @include flex(center, center);
+        border: 1px solid $Light-Gray;
+        border-radius: 100%;
+        width: 5rem;
+        height: 5rem;
+        color: $Light-Gray;
+        transition: .3s ease-in-out;
+
+        &:hover{
+            color: $Black;
+            background-color: $Light-Gray;
+            border-color: transparent;
+        }
+    }
+}
+.credits{
+    margin-top: 3rem;
+    a{
+        color: $Light-Gray;
+    }
+}

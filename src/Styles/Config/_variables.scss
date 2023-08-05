@@ -1,0 +1,47 @@
+$Light-Background: #C7C5C0; // Light background
+$Black: #111011; // Text on light background
+$Gray: #605F61; // Text on dark background
+$Dim-Background: #010001; // On hover Homepage background color
+$Light-Gray: #A9A3A4; // Watch page text color
+
+$fs-300: 1.2rem;
+$fs-400: 1.4rem;
+$fs-500: 1.6rem;
+$fs-550: 1.8rem;
+$fs-600: 2.0rem;
+$fs-800: 2.8rem;
+$clamp-var-fs: clamp(2rem, 3vw, 4rem);
+
+
+$ff-default: Sequel Sans,system-ui, -apple-system, sans-serif;
+$ff-large: Monument Extended,system-ui, -apple-system, sans-serif;
+$ff-cursive: GrandSlang, serif;
+
+$z-0: 0;
+$z-1: 1;
+$z-2: 2;
+$z-3: 3;
+$z-max: 100;
+
+$head-spacing: 8vh;
+$timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+
+@mixin flex($align, $justify){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin media-lg{
+    @media screen and (min-width: 55em) {
+        @content;
+    }
+}
+@mixin media-sm{
+    @media screen and (max-width: 55em) {
+        @content;
+    }
+}
+
+

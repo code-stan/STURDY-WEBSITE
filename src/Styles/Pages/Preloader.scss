@@ -1,0 +1,42 @@
+.preloader{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    background-color: $Light-Background;
+    z-index: $z-max;
+    user-select: none;
+    font-family: $ff-large;
+    font-weight: 800;
+
+    .brand{
+        @include flex(center, center);
+        width: 100%;
+        height: 100vh;
+        font-size: $fs-600;
+    }
+    .brand-container{
+        overflow: hidden;
+    }
+    .counter-container{
+        overflow: hidden;
+        position: absolute;
+        right: 1rem;
+        bottom: 2%;
+    }
+    .counter{
+        font-size: $fs-550;
+    }
+
+    @include media-lg{
+        .brand{
+            font-size: 3vw;
+        }
+        .counter-container{
+            bottom: 0;
+        }
+        .counter{
+            font-size: 2.5vw;
+        }
+    }
+}
