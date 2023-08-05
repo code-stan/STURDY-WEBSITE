@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     include: ["gsap"],
   },
+  build: {
+      rollupOptions: {
+        external: ['gsap'],
+      },
+    }
 })
