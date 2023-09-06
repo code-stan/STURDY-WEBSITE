@@ -5,14 +5,13 @@ import Watch from "./Pages/Watch/Watch"
 import Clients from "./Pages/Clients/Clients"
 import Info from "./Pages/Info/Info"
 import Preloader from "./Pages/Preloader/Preloader"
-import { useContext, createContext, useState, useEffect } from "react";
-import { gsap } from "gsap";
+import { useContext, createContext, useEffect } from "react";
+import gsap from "gsap";
 
 
 const appContext = createContext();
 export const useAppContext = ()=> useContext(appContext)
 const App = () => {
-  const [revealApp, setRevealApp] = useState(false)
 
 
   useEffect(()=>{
@@ -43,8 +42,6 @@ const App = () => {
         count += countRange;
         if(count >100){
           count = 100;
-          setRevealApp(true);
-          console.log(revealApp)
         }
         counter.textContent = `${count}%`
         
@@ -52,7 +49,7 @@ const App = () => {
       setInterval(preloaderCounter, delay)
     }
     startCounter()
-  }, [revealApp])
+  }, [])
 
 
 
