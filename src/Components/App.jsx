@@ -6,7 +6,7 @@ import Clients from "./Pages/Clients/Clients"
 import Info from "./Pages/Info/Info"
 import Preloader from "./Pages/Preloader/Preloader"
 import { useContext, createContext, useEffect } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 
 const appContext = createContext();
