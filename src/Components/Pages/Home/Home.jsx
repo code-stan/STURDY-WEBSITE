@@ -43,14 +43,13 @@ const Home = () => {
     const body = document.body;
     const reelMouse = document.querySelector(".follow-through");
     function showNewCursor(e){
-      const mouseXMovement = e.pageX;
-      const mouseYMovement = e.pageY;
-      const containerHeight = reelVideo.getBoundingClientRect().height;
-      const containerWidth = reelVideo.getBoundingClientRect().width;
-      const x = (Math.floor((mouseXMovement / containerWidth) * 100) - 57) + "%"
-      const y = (Math.floor((mouseYMovement / containerHeight) * 100) - 44) + "%"
-      reelMouse.style.setProperty("--x", x)
-      reelMouse.style.setProperty("--y", y)
+      const {clientY, clientX} = e;
+      const {top, left} = reelVideo.getBoundingClientRect();
+      console.log(top, left)
+      const x = `${clientX - left}px`;
+      const y = `${clientY - top}px`;
+      reelMouse.style.top = y
+      reelMouse.style.left = x
     }
     
     // There were some glitch using this dynamic function for both the mouseenter and mouse leave event

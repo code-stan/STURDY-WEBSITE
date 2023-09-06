@@ -5,9 +5,57 @@ import Watch from "./Pages/Watch/Watch"
 import Clients from "./Pages/Clients/Clients"
 import Info from "./Pages/Info/Info"
 import Preloader from "./Pages/Preloader/Preloader"
+import { useContext, createContext, useState, useEffect } from "react";
+import { gsap } from "gsap";
 
 
+const appContext = createContext();
+export const useAppContext = ()=> useContext(appContext)
 const App = () => {
+  const [revealApp, setRevealApp] = useState(false)
+
+
+  useEffect(()=>{
+    let count = 0;
+    function startCounter(){
+      const counter = document.querySelector(".counter");
+      const delay = Math.floor(Math.random() * 165) + 50
+      function preloaderCounter(){
+        let countRange = Math.floor(Math.random() * 10) + 1;
+        if(count === 100){
+          const tl = gsap.timeline();
+          tl.to(".brand-name", {
+            y: 100,
+            duration: 2
+          }, .4).to(".counter", {
+            y: -100,
+            duration: 2
+          }, "<").to(".preloader", {
+            opacity: 0,
+            pointerEvents: "none"
+          }).from(".app-container", {
+            opacity: 1,
+          }).set(".app-container", {
+            autoAlpha: 1
+          })
+          return;
+        }
+        count += countRange;
+        if(count >100){
+          count = 100;
+          setRevealApp(true);
+          console.log(revealApp)
+        }
+        counter.textContent = `${count}%`
+        
+      }
+      setInterval(preloaderCounter, delay)
+    }
+    startCounter()
+  }, [revealApp])
+
+
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout/>}>
@@ -21,8 +69,11 @@ const App = () => {
     
   return (
     <>
-       <RouterProvider router={router}/>
+        <main className="app-container">
+          <RouterProvider router={router}/>
+        </main>
         <Preloader/>
+
     </>
   )
 }

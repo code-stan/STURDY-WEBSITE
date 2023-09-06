@@ -16,7 +16,7 @@
     position: relative;
     overflow-y: hidden;
 
-    &:is(:hover, :focus){
+    &:is(:hover, :focus-visible){
         color: $Black;
     }
     .artist__name{
@@ -24,7 +24,7 @@
         transform: translateY(400px);
     }
 
-    &:is(:hover, :focus) :is(.img, .image-tab){
+    &:is(:hover, :focus-visible) :is(.img, .image-tab){
         opacity: 1;
     }
 }
