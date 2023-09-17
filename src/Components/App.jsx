@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import Layout from "./Layouts/Layout"
 import Home from "./Pages/Home/Home"
