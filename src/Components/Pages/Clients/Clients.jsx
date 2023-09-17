@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { useEffect } from "react";
 const Clients = () => {
   useEffect(()=>{
