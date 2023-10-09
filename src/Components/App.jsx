@@ -1,11 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import Layout from "./Layouts/Layout"
-import Home from "./Pages/Home/Home"
-import Watch from "./Pages/Watch/Watch"
-import Clients from "./Pages/Clients/Clients"
-import Info from "./Pages/Info/Info"
-import Preloader from "./Pages/Preloader/Preloader"
+import {Home, Watch, Clients, Info, Preloader } from "./Pages/index"
 import { useContext, createContext, useEffect } from "react";
 import {gsap} from "gsap";
 
@@ -19,7 +15,7 @@ const App = () => {
     let count = 0;
     function startCounter(){
       const counter = document.querySelector(".counter");
-      const delay = Math.floor(Math.random() * 165) + 50
+      const delay = Math.floor(Math.random() * 185) + 50
       function preloaderCounter(){
         let countRange = Math.floor(Math.random() * 10) + 1;
         if(count === 100){
@@ -49,7 +45,8 @@ const App = () => {
       }
       setInterval(preloaderCounter, delay)
     }
-    startCounter()
+    
+    setTimeout(startCounter, Math.floor(Math.random() * 2800) + 45)
   }, [])
 
 

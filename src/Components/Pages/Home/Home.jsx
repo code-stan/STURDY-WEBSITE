@@ -14,10 +14,9 @@ const Home = () => {
         hh = 12;
     }
     if(hh > 12){
-        hh = hh - 12;
-        period = "PM";
-
-      }
+      hh = hh - 12;
+      period = "PM";
+    }
     if(hh >= 12){
       period = "PM";
         
@@ -45,14 +44,13 @@ const Home = () => {
     function showNewCursor(e){
       const {clientY, clientX} = e;
       const {top, left} = reelVideo.getBoundingClientRect();
-      console.log(top, left)
       const x = `${clientX - left}px`;
       const y = `${clientY - top}px`;
-      reelMouse.style.top = y
       reelMouse.style.left = x
+      reelMouse.style.top = y
     }
     
-    // There were some glitch using this dynamic function for both the mouseenter and mouse leave event
+    // There were some glitch using this dynamic function for both the mouseenter and mouseleave event
 
     // function toggleReel(){
     //   setIsPlaying(!isPlaying)

@@ -42,7 +42,7 @@
         min-width: 8rem;
         @extend %image-prop;
         object-fit: cover;
-
+        
     }
     :is(&, img):hover{
         max-width: 30rem;
